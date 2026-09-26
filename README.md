@@ -32,6 +32,10 @@ claude mcp add plane -s local \
   skill tells Claude to ask instead of borrowing another folder's key.
 - Do not add Plane servers in **user scope** (`-s user`): their tools then appear in every folder.
 - Do not put keys in a committed `.mcp.json`.
+- Check that your home folder has no stray `.git` directory before binding. Claude Code treats
+  the nearest `.git` as the project root, so a leftover one in `~` makes every non-git folder
+  share one config, and a local-scope binding then covers the whole home folder. Check the
+  result with `claude mcp list` in an unrelated folder.
 - Per-project conventions (language, what "Done" means, modules) go in that repo's `CLAUDE.md`
   under a "Plane" heading, not in the plugin.
 
