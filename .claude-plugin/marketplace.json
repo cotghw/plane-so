@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "cotghw-plugins",
-  "description": "Personal Claude Code plugins",
+  "name": "plane-so",
+  "description": "Claude Code plugin for a self-hosted Plane (plane.so) instance",
   "owner": {
     "name": "cotghw"
   },

@@ -1,19 +1,17 @@
-# cotghw-plugins
+# plane-so
 
-Personal Claude Code plugin marketplace.
+Claude Code plugin marketplace for a self-hosted Plane (plane.so) instance.
 
 ## Install
 
 ```bash
-claude plugin marketplace add cotghw/claude-plugins
-claude plugin install plane-pm@cotghw-plugins
+claude plugin marketplace add cotghw/plane-so
+claude plugin install plane-pm@plane-so
 ```
 
 The repo is private, so the machine needs git access to it (`gh auth login`).
 
-## Plugins
-
-### plane-pm
+## plane-pm
 
 Project manager + coder discipline for a self-hosted Plane (Community Edition).
 
