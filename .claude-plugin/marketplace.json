@@ -1,0 +1,19 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "cotghw-plugins",
+  "description": "Personal Claude Code plugins",
+  "owner": {
+    "name": "cotghw"
+  },
+  "plugins": [
+    {
+      "name": "plane-pm",
+      "description": "Project manager + coder discipline for a self-hosted Plane (Community Edition): work items, modules, intake and comments kept truthful, used only in folders that carry their own Plane credentials.",
+      "author": {
+        "name": "cotghw"
+      },
+      "source": "./plugins/plane-pm",
+      "category": "productivity"
+    }
+  ]
+}
