@@ -9,7 +9,8 @@ claude plugin marketplace add cotghw/plane-so
 claude plugin install plane-pm@plane-so
 ```
 
-The repo is private, so the machine needs git access to it (`gh auth login`).
+Inside a Claude Code session the same works as `/plugin marketplace add cotghw/plane-so`, then
+`/plugin install plane-pm@plane-so`.
 
 ## plane-pm
 
