@@ -17,7 +17,14 @@ Inside a Claude Code session the same works as `/plugin marketplace add cotghw/p
 Project manager + coder discipline for a self-hosted Plane (Community Edition).
 
 The plugin carries **no credentials and no instance data**. Plane is used only in folders that
-hold their own credentials. Bind a folder by running this inside it:
+hold their own credentials.
+
+Get an API key first. A dedicated Plane user per agent (invited as **Member**) keeps the activity
+log honest about who changed what and can be revoked without touching a real person. Sign in as
+that user, open **Profile settings → API tokens** (`/settings/profile/api-tokens/`) and add a
+token; it is shown once. The key carries exactly that user's role in each project.
+
+Bind a folder by running this inside it:
 
 ```bash
 claude mcp add plane -s local \

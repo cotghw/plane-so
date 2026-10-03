@@ -1,6 +1,6 @@
 # Plane Community Edition: what works through the API
 
-Probed live on a self-hosted instance, **Plane CE v1.4.2**, plane-mcp-server 3.2.0; re-probed 2026-09-23
+Probed live on a self-hosted instance, **Plane CE v1.4.2**, plane-mcp-server 0.3.3 (plane-sdk 0.3.1); re-probed 2026-09-23
 (pages, milestones and `retrieve_by_identifier` had 404'd on 2026-09-22 and now work - the
 instance moved under us, so trust the date on this table).
 Re-probe after a Plane upgrade (`curl -s https://<host>/api/instances/` shows `current_version`
@@ -9,7 +9,8 @@ table over them for this instance.
 
 | Feature | MCP tool | Status on CE 1.4.2 | Workaround |
 |---|---|---|---|
-| Work items CRUD, parent/child, assignees, labels, priority, dates | `workitem` | Works | - |
+| Work items CRUD, parent/child, assignees, labels, priority, dates | `workitem` | Works. The parent field is `parent`, **not** `parent_id` - a wrong name comes back as plain text (`does not take: parent_id`) with no error flag | - |
+| Archive a work item | `workitem archive` / `list_archived` | **404** - no v1 route for `work-items/<id>/archive/` or `archived-work-items/` | User archives in the UI; `project archive` works |
 | PQL filters (`pql=`) | `workitem list/count` | **Refused** ("not supported on this edition") | List all, filter client-side; `plane_rest.py items --open` |
 | Workspace-scope `list` (no `project_id`) | `workitem` | Paid-edition feature | `search`, or `list` per project |
 | `workitem count` | `workitem` | Works with `group_by` from its fixed list | - |
@@ -35,7 +36,7 @@ table over them for this instance.
 | Estimates | `project_estimate` | Works | - |
 | Views (saved filters) | none | No API tool | User creates in UI; suggest filters |
 | Project feature toggles | `project get_features/update_features` | 404 | Project settings in UI |
-| Initiatives, releases (+ labels/tags), customers (+ properties/requests), templates, collections, work logs (`worklog_summary`), teamspaces | `initiative`, `release*`, `customer*`, `template`, `collection`, `work_log` | Pro/Business/Enterprise - **do not call**, they 404 | - |
+| Initiatives, releases (+ labels/tags), customers (+ properties/requests), templates, collections, work logs (`worklog_summary`), teamspaces | `initiative`, `release*`, `customer*`, `template`, `collection`, `work_log`, `worklog_summary` | Pro/Business/Enterprise - **do not call**, they 404 | - |
 
 ## Concepts (from Plane docs, for reasoning about the board)
 
